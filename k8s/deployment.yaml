@@ -18,8 +18,25 @@ spec:
       containers:
       - name: goserver
         image: "mrpsousa/k8s-pratice:latest"
+        env:
+          - name: NAME
+            value: "Roger"
+          - name: AGE
+            value: "92"
       tolerations:
       - key: node.kubernetes.io/not-ready
         operator: Exists
         effect: NoSchedule
-    
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: goserver
+spec:
+  selector: 
+    app: goserver
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: LoadBalancer

@@ -37,6 +37,11 @@
     - kubectl rollout undo deployment {deployment_name} --to-revision={revision_number} (back to last "version")
 
     
+## Deployed
+    - configs to .kube
+    - kubectl get pod
+    - kubectl get svc
+    - kubectl port-forward svc/goserver-service 8000:8000
 
 
 <!-- spec:
