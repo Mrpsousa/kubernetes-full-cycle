@@ -43,13 +43,18 @@
     - kubectl get svc
     - kubectl port-forward svc/goserver-service 8000:8000
 
-
-<!-- spec:
-  containers:
-  - name: goserver
-    image: "mrpsousa/k8s-pratice:latest"
-    # env:
-    # - name: KUBE_CACHE_MUTATION_DETECTOR
-    #   value: "true" -->
+## Auto Scaling
+    Metrics
+    - kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+    - kubectl top nodes
+    - kubectl get pod
+    - kubectl top pod {pod_name}
+    HPA
+    - kubectl get hpa
  
- 
+ ## Ingress (Ngnix)
+    - https://kubernetes.github.io/ingress-nginx/deploy/#digital-ocean
+    - User GKE - google kubernetes
+        gloud
+        kubectl apply -f k8s/deployment.yaml 
+    - kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.7.1/deploy/static/provider/do/deploy.yaml

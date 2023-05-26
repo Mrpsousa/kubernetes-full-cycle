@@ -18,6 +18,22 @@ spec:
       containers:
       - name: goserver
         image: "mrpsousa/k8s-pratice:latest"
+
+        resources:
+          cpu: 100m
+          memory: 20Mi
+        limits:
+          cpu: 500m
+          memory: 25Mi
+
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8000
+          periodSeconds: 5
+          failureThreshold: 3
+          timeoutSeconds: 1
+          successThreshold: 1
         env:
           - name: NAME
             value: "Roger"
