@@ -58,3 +58,4 @@
         gloud
         kubectl apply -f k8s/deployment.yaml 
     - kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.7.1/deploy/static/provider/do/deploy.yaml
+    - need to config ingress - DNS
